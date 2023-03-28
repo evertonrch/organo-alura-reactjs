@@ -3,6 +3,7 @@ import "./CampoTexto.css";
 // Componente react inicia com letra maiúscula
 const CampoTexto = function (props) {
   const placeholderParam = props.placeholder;
+  console.log(placeholderParam);
   return (
     <div className="campo-texto">
       <label>{props.label}</label>
