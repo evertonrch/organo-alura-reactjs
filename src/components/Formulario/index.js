@@ -14,12 +14,27 @@ const Formulario = function () {
     "Mobile",
     "Inovação e Tec",
   ];
+
+  const callback = function (e) {
+    e.preventDefault();
+    console.log(e);
+    console.log("Formulario");
+  };
+
   return (
     <section className="formulario">
-      <form>
+      <form onSubmit={callback}>
         <h2>Preencha os dados para criar o card do colaborador</h2>
-        <CampoTexto label="Nome" placeholder="Digite seu Nome" />
-        <CampoTexto label="Cargo" placeholder="Digite seu Cargo" />
+        <CampoTexto
+          required={true}
+          label="Nome"
+          placeholder="Digite seu Nome"
+        />
+        <CampoTexto
+          required={true}
+          label="Cargo"
+          placeholder="Digite seu Cargo"
+        />
         <CampoTexto label="Imagem" placeholder="Digite o endereço da Imagem" />
         <ListaSuspensa label="Time" itens={itens} />
         <Botao>

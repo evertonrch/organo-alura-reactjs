@@ -8,7 +8,11 @@ const CampoTexto = function (props) {
     <div className="campo-texto">
       <label>{props.label}</label>
       {/* Aqui espera uma variável js */}
-      <input type="text" placeholder={placeholderParam} />
+      <input
+        required={props.required}
+        type="text"
+        placeholder={placeholderParam}
+      />
     </div>
   );
 };
