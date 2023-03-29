@@ -3,6 +3,7 @@ import CampoTexto from "../CampoTexto";
 import ListaSuspensa from "../ListaSuspensa";
 import { FaPlus } from "react-icons/fa";
 import "./Formulario.css";
+import { useState } from "react";
 
 const Formulario = function () {
   const itens = [
@@ -15,10 +16,14 @@ const Formulario = function () {
     "Inovação e Tec",
   ];
 
+  const [nome, setNome] = useState("");
+  const [cargo, setCargo] = useState("");
+  const [imagem, setImagem] = useState("");
+  const [time, setTime] = useState("");
+
   const callback = function (e) {
     e.preventDefault();
-    console.log(e);
-    console.log("Formulario");
+    console.log("Formulario => ", nome, cargo, imagem, time);
   };
 
   return (
@@ -29,14 +34,28 @@ const Formulario = function () {
           required={true}
           label="Nome"
           placeholder="Digite seu Nome"
+          valor={nome}
+          update={(valor) => setNome(valor)}
         />
         <CampoTexto
           required={true}
           label="Cargo"
           placeholder="Digite seu Cargo"
+          valor={cargo}
+          update={(valor) => setCargo(valor)}
         />
-        <CampoTexto label="Imagem" placeholder="Digite o endereço da Imagem" />
-        <ListaSuspensa label="Time" itens={itens} />
+        <CampoTexto
+          label="Imagem"
+          placeholder="Digite o endereço da Imagem"
+          valor={imagem}
+          update={(valor) => setImagem(valor)}
+        />
+        <ListaSuspensa
+          label="Time"
+          itens={itens}
+          valor={time}
+          update={(valor) => setTime(valor)}
+        />
         <Botao>
           <FaPlus />
         </Botao>

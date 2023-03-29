@@ -1,11 +1,10 @@
 import "./ListaSuspensa.css";
 
 const ListaSuspensa = function (props) {
-  console.log(props);
   return (
     <div className="lista-suspensa">
       <label>{props.label}</label>
-      <select>
+      <select onChange={(e) => props.update(e.target.value)}>
         {props.itens.sort().map(function (item, idx) {
           return <option key={idx}>{item}</option>;
         })}
