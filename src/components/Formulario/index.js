@@ -5,7 +5,7 @@ import { FaPlus } from "react-icons/fa";
 import "./Formulario.css";
 import { useState } from "react";
 
-const Formulario = function () {
+const Formulario = function (props) {
   const itens = [
     "Programação",
     "Front-End",
@@ -23,7 +23,12 @@ const Formulario = function () {
 
   const callback = function (e) {
     e.preventDefault();
-    console.log("Formulario => ", nome, cargo, imagem, time);
+    props.aoNovoColaborador({
+      nome,
+      cargo,
+      imagem,
+      time,
+    });
   };
 
   return (
