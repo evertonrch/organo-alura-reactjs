@@ -1,5 +1,7 @@
+import Botao from "../Botao/index,";
 import CampoTexto from "../CampoTexto";
 import ListaSuspensa from "../ListaSuspensa";
+import { FaPlus } from "react-icons/fa";
 import "./Formulario.css";
 
 const Formulario = function () {
@@ -20,6 +22,9 @@ const Formulario = function () {
         <CampoTexto label="Cargo" placeholder="Digite seu Cargo" />
         <CampoTexto label="Imagem" placeholder="Digite o endereço da Imagem" />
         <ListaSuspensa label="Time" itens={itens} />
+        <Botao>
+          <FaPlus />
+        </Botao>
       </form>
     </section>
   );
