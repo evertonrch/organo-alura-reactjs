@@ -1,14 +1,14 @@
 import "./Colaborador.css";
 
-const Colaborador = function () {
+const Colaborador = function ({ nome, img, cargo }) {
   return (
     <div className="colaborador">
       <div className="cabecalho">
-        <img src="https://github.com/evertonrch.png" alt="Some image"></img>
+        <img src={img} alt={nome}></img>
       </div>
       <div className="rodape">
-        <h4>Everton Rocha</h4>
-        <h5>Dev</h5>
+        <h4>{nome}</h4>
+        <h5>{cargo}</h5>
       </div>
     </div>
   );

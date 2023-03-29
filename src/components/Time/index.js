@@ -8,8 +8,16 @@ const Time = function (props) {
   return (
     <section className="time" style={bgColor}>
       <h3 style={borderColor}>{props.nome}</h3>
-      <Colaborador />
-      <Colaborador />
+      <div className="colaboradores">
+        {props.colaboradores.map((colaborador) => (
+          <Colaborador
+            nome={colaborador.nome}
+            cargo={colaborador.cargo}
+            img={colaborador.imagem}
+            time={colaborador.time}
+          />
+        ))}
+      </div>
     </section>
   );
 };
