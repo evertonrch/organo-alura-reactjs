@@ -1,3 +1,4 @@
+import Colaborador from "../Colaborador";
 import "./Time.css";
 
 const Time = function (props) {
@@ -7,6 +8,8 @@ const Time = function (props) {
   return (
     <section className="time" style={bgColor}>
       <h3 style={borderColor}>{props.nome}</h3>
+      <Colaborador />
+      <Colaborador />
     </section>
   );
 };
