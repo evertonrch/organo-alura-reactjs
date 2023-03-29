@@ -6,7 +6,7 @@ import "./Formulario.css";
 import { useState } from "react";
 
 const Formulario = function (props) {
-  const itens = [
+  const times = [
     "Programação",
     "Front-End",
     "Data Science",
@@ -57,7 +57,7 @@ const Formulario = function (props) {
         />
         <ListaSuspensa
           label="Time"
-          itens={itens}
+          itens={times}
           valor={time}
           update={(valor) => setTime(valor)}
         />
