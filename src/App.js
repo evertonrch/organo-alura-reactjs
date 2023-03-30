@@ -4,6 +4,7 @@ import Banner from "./components/Banner/Banner";
 // Renomeando o componente para index não precisa dublicar no import
 // import CampoTexto from "./components/CampoTexto";
 import Formulario from "./components/Formulario";
+import Rodape from "./components/Rodape";
 import Time from "./components/Time";
 
 function App() {
@@ -73,6 +74,7 @@ function App() {
           />
         );
       })}
+      <Rodape />
     </div>
   );
 }
