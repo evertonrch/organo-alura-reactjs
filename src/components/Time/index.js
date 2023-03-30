@@ -5,7 +5,7 @@ const Time = function (props) {
   const bgColor = { backgroundColor: props.corSecundaria };
   const borderColor = { borderColor: props.corPrimaria };
 
-  return (
+  return props.colaboradores.length > 0 ? (
     <section className="time" style={bgColor}>
       <h3 style={borderColor}>{props.nome}</h3>
       <div className="colaboradores">
@@ -19,6 +19,8 @@ const Time = function (props) {
         ))}
       </div>
     </section>
+  ) : (
+    ""
   );
 };
 

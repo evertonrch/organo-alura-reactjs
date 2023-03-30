@@ -19,6 +19,9 @@ const Formulario = function (props) {
       imagem,
       time,
     });
+    setNome("");
+    setCargo("");
+    setImagem("");
   };
 
   return (
