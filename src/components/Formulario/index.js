@@ -1,5 +1,5 @@
 import Botao from "../Botao/index,";
-import CampoTexto from "../CampoTexto";
+import CampoForm from "../CampoForm";
 import ListaSuspensa from "../ListaSuspensa";
 import { FaPlus } from "react-icons/fa";
 import "./Formulario.css";
@@ -38,24 +38,24 @@ const Formulario = function (props) {
   };
 
   return (
-    <section className="formulario">
+    <section className="formulario-container">
       <form onSubmit={cbNovoColaborador}>
         <h2>Preencha os dados para criar o card do colaborador</h2>
-        <CampoTexto
+        <CampoForm
           required={true}
           label="Nome"
           placeholder="Digite seu Nome"
           valor={nome}
           update={(valor) => setNome(valor)}
         />
-        <CampoTexto
+        <CampoForm
           required={true}
           label="Cargo"
           placeholder="Digite seu Cargo"
           valor={cargo}
           update={(valor) => setCargo(valor)}
         />
-        <CampoTexto
+        <CampoForm
           label="Imagem"
           placeholder="Digite o endereço da Imagem"
           valor={imagem}
@@ -73,14 +73,15 @@ const Formulario = function (props) {
       </form>
       <form onSubmit={cbNovoTime}>
         <h2>Preencha os dados para criar o card do time</h2>
-        <CampoTexto
+        <CampoForm
           required
           label="Time"
           placeholder="Digite o nome do time"
           valor={nomeTime}
           update={(valor) => setNomeTime(valor)}
         />
-        <CampoTexto
+        <CampoForm
+          type={"color"}
           required
           label="Cor"
           placeholder="Digite a cor"
