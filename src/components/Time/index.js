@@ -7,6 +7,7 @@ const Time = function (props) {
 
   return props.colaboradores.length > 0 ? (
     <section className="time" style={bgColor}>
+      <input value={props.corPrimaria} type="color" className="input-color" />
       <h3 style={borderColor}>{props.nome}</h3>
       <div className="colaboradores">
         {props.colaboradores.map((colaborador) => {
