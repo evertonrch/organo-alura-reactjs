@@ -3,6 +3,7 @@ import "./Time.css";
 import hexToRgba from "hex-to-rgba";
 
 const Time = function (props) {
+  console.log(props);
   return props.colaboradores.length > 0 ? (
     <section
       className="time"
@@ -10,7 +11,7 @@ const Time = function (props) {
     >
       <input
         value={props.time.cor}
-        onChange={(e) => props.mudarCor(e.target.value, props.time.nome)}
+        onChange={(e) => props.mudarCor(e.target.value, props.time.id)}
         type="color"
         className="input-color"
       />
@@ -19,7 +20,7 @@ const Time = function (props) {
         {props.colaboradores.map((colaborador) => {
           return (
             <Colaborador
-              key={colaborador.nome}
+              key={colaborador.id}
               nome={colaborador.nome}
               cargo={colaborador.cargo}
               img={colaborador.imagem}

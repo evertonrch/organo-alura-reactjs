@@ -4,6 +4,7 @@ import ListaSuspensa from "../ListaSuspensa";
 import { FaPlus } from "react-icons/fa";
 import "./Formulario.css";
 import { useState } from "react";
+import { v4 as uuidv4 } from "uuid";
 
 const Formulario = function (props) {
   const [nome, setNome] = useState("");
@@ -14,6 +15,7 @@ const Formulario = function (props) {
   const callback = function (e) {
     e.preventDefault();
     props.aoNovoColaborador({
+      id: uuidv4(),
       nome,
       cargo,
       imagem,
