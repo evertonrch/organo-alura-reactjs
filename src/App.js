@@ -51,6 +51,11 @@ function App() {
   const aoAdicionaNovoColaborador = function (colaborador) {
     setColaboradores([...colaboradores, colaborador]);
   };
+
+  function deletarColaborador() {
+    console.log("Deletando colaborador");
+  }
+
   return (
     <div className="App">
       <Banner />
@@ -71,6 +76,7 @@ function App() {
             colaboradores={colaboradores.filter(
               (colaborador) => colaborador.time === time.nome
             )}
+            aoDeletar={deletarColaborador}
           />
         );
       })}
