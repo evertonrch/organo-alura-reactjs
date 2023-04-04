@@ -12,7 +12,10 @@ const Formulario = function (props) {
   const [imagem, setImagem] = useState("");
   const [time, setTime] = useState("");
 
-  const callback = function (e) {
+  const [nomeTime, setNomeTime] = useState("");
+  const [corTime, setCorTime] = useState("");
+
+  const cbNovoColaborador = function (e) {
     e.preventDefault();
     props.aoNovoColaborador({
       id: uuidv4(),
@@ -27,9 +30,16 @@ const Formulario = function (props) {
     setTime("");
   };
 
+  const cbNovoTime = (e) => {
+    e.preventDefault();
+    props.cadastrarTime({ nome: nomeTime, cor: corTime });
+    setNomeTime("");
+    setCorTime("");
+  };
+
   return (
     <section className="formulario">
-      <form onSubmit={callback}>
+      <form onSubmit={cbNovoColaborador}>
         <h2>Preencha os dados para criar o card do colaborador</h2>
         <CampoTexto
           required={true}
@@ -56,6 +66,26 @@ const Formulario = function (props) {
           itens={props.times}
           valor={time}
           update={(valor) => setTime(valor)}
+        />
+        <Botao>
+          <FaPlus />
+        </Botao>
+      </form>
+      <form onSubmit={cbNovoTime}>
+        <h2>Preencha os dados para criar o card do time</h2>
+        <CampoTexto
+          required
+          label="Time"
+          placeholder="Digite o nome do time"
+          valor={nomeTime}
+          update={(valor) => setNomeTime(valor)}
+        />
+        <CampoTexto
+          required
+          label="Cor"
+          placeholder="Digite a cor"
+          valor={corTime}
+          update={(valor) => setCorTime(valor)}
         />
         <Botao>
           <FaPlus />
