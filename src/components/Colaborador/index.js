@@ -1,14 +1,18 @@
 import "./Colaborador.css";
 import { AiFillCloseSquare } from "react-icons/ai";
 
-const Colaborador = function ({ nome, img, cargo, corFundo, aoDeletar }) {
+const Colaborador = function ({ nome, img, cargo, corFundo, aoDeletar, id }) {
+  const deletarColaboradorPeloId = function () {
+    aoDeletar(id);
+  };
+
   return (
     <div className="colaborador">
       <AiFillCloseSquare
         className="deletar"
         size={30}
         cursor={"pointer"}
-        onClick={aoDeletar}
+        onClick={deletarColaboradorPeloId}
       />
       <div className="cabecalho" style={{ backgroundColor: corFundo }}>
         <img src={img} alt={nome}></img>

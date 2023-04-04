@@ -3,7 +3,6 @@ import "./Time.css";
 import hexToRgba from "hex-to-rgba";
 
 const Time = function (props) {
-  console.log(props);
   return props.colaboradores.length > 0 ? (
     <section
       className="time"
@@ -17,10 +16,11 @@ const Time = function (props) {
       />
       <h3 style={{ borderColor: props.time.cor }}>{props.time.nome}</h3>
       <div className="colaboradores">
-        {props.colaboradores.map((colaborador) => {
+        {props.colaboradores.map((colaborador, idx) => {
           return (
             <Colaborador
-              key={colaborador.id}
+              key={idx}
+              id={colaborador.id}
               nome={colaborador.nome}
               cargo={colaborador.cargo}
               img={colaborador.imagem}
