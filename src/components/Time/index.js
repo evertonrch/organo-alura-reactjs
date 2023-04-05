@@ -28,6 +28,8 @@ const Time = function (props) {
               corFundo={props.time.cor}
               aoDeletar={props.aoDeletar}
               corColaborador={props.corDoColaborador}
+              favorito={colaborador.favorito}
+              aoFavoritar={props.aoFavoritar}
             />
           );
         })}

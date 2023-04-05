@@ -1,9 +1,29 @@
 import "./Colaborador.css";
-import { AiFillCloseSquare } from "react-icons/ai";
+import { AiFillCloseSquare, AiFillStar, AiOutlineStar } from "react-icons/ai";
 
-const Colaborador = function ({ nome, img, cargo, corFundo, aoDeletar, id }) {
+const Colaborador = function ({
+  nome,
+  img,
+  cargo,
+  corFundo,
+  aoDeletar,
+  id,
+  aoFavoritar,
+  favorito,
+}) {
+  console.log("Favorito", favorito);
   const deletarColaboradorPeloId = function () {
     aoDeletar(id);
+  };
+
+  const favoritar = function () {
+    aoFavoritar(id);
+  };
+
+  const propsFavorito = {
+    size: 25,
+    onClick: favoritar,
+    color: "#d4d645",
   };
 
   return (
@@ -20,6 +40,13 @@ const Colaborador = function ({ nome, img, cargo, corFundo, aoDeletar, id }) {
       <div className="rodape">
         <h4>{nome}</h4>
         <h5>{cargo}</h5>
+        <div className="favoritar">
+          {favorito ? (
+            <AiFillStar {...propsFavorito} />
+          ) : (
+            <AiOutlineStar {...propsFavorito} />
+          )}
+        </div>
       </div>
     </div>
   );

@@ -19,6 +19,7 @@ const Formulario = function (props) {
     e.preventDefault();
     props.aoNovoColaborador({
       id: uuidv4(),
+      favorito: false,
       nome,
       cargo,
       imagem,
